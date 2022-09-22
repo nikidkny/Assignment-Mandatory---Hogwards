@@ -1,0 +1,118 @@
+@font-face {
+  font-family: harryPotterFont;
+  src: url(harry-p-font/HarryP-MVZ6w.ttf);
+}
+body {
+  position: relative;
+  color: white;
+  display: grid;
+  background-image: url("./media/background.jpg");
+  margin: 20px 50px;
+}
+tbody {
+  background-color: rgba(39, 38, 38, 0.512);
+  text-align: left;
+}
+#list {
+  background-color: black;
+  text-align: center;
+}
+h1 {
+  font-family: harryPotterFont;
+  font-size: 4em;
+  text-align: center;
+}
+.housesGrid {
+  display: grid;
+  align-items: center;
+}
+.housesGrid > h2 {
+  text-align: center;
+}
+.housesO {
+  display: flex;
+  justify-content: space-evenly;
+}
+.housesT {
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
+#sorting th.sortby {
+  text-decoration: underline;
+}
+#sorting th.sortby[data-sort-direction="asc"]::after {
+  content: " ⮝";
+}
+#sorting th.sortby[data-sort-direction="desc"]::after {
+  content: " ⮟";
+}
+/* .hidden {
+  display: none;
+}
+.popup {
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  margin-top: 15%;
+  margin-bottom: 10%;
+  margin-left: 38%;
+  padding-right: 3%;
+  padding-left: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: center;
+  background-color: #d0342c;
+  border-radius: 10px;
+}
+.close {
+  position: absolute;
+  top: 5%;
+  right: 1%;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+} */
+#huff,
+#slyt,
+#gryf,
+#rave,
+#all {
+  width: 100%;
+  height: 2em;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+/* #huff:active, */
+#huff:hover {
+  background-color: #e79a20;
+  border: 2px #f5ca85;
+  box-shadow: 0px 1px 10px #f5ca85;
+}
+#slyt:active,
+#slyt:hover {
+  background-color: #2f6a5d;
+  border: #7be0ca;
+  box-shadow: 0px 1px 10px #7be0ca;
+}
+#gryf:active,
+#gryf:hover {
+  background-color: #943330;
+  border: #fc827e;
+  box-shadow: 0px 1px 10px #fc827e;
+}
+#rave:active,
+#rave:hover {
+  background-color: #1d3e6e;
+  border: #65a3fc;
+  box-shadow: 0px 1px 10px #65a3fc;
+}
+#all:hover {
+  background-color: white;
+  border: black;
+  box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.773);
+  color: black;
+}

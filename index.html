@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hogwarts</title>
+  </head>
+  <body>
+    <!-- <div class="hidden">
+      <div class="popup">
+        <a class="close" href="#">✘</a>
+        <h2>Are you sure you want to expell<span></span></h2>
+        <button id="expellYes">Yes</button>
+        <button>No</button>
+      </div>
+    </div> -->
+    <h1>Hogwarts Student List</h1>
+    <div class="housesGrid">
+      <h2>Houses of Hogwarts:</h2>
+      <p class="housesO">
+          <button id="huff" class="filter" data-action="filter" data-filter="hufflepuff">House Hufflepuff</button>
+          <button id="slyt" class="filter" data-action="filter" data-filter="slytherin">House Slytherin</button>
+          <button id="rave" class="filter" data-action="filter" data-filter="ravenclaw">House Ravenclaw</button>
+          <button id="gryf" class="filter" data-action="filter" data-filter="gryffindor">House Gryffindor</button>
+      </p>
+      <div class="housesT">
+        <h4 class="hufflepuff"></h4>
+        <hr>
+        <h4 class="slytherin"></h4>
+        <hr>
+        <h4 class="ravenclaw"></h4>
+        <hr>
+        <h4 class="gryffindor"></h4>
+      </div>
+    </div>
+      Students of Hogwarts:
+      <button id="expelled" class="filter" data-action="filter" data-filter="expelled">
+        All expelled students
+      </button>
+      <button id="all" class="filter" data-action="filter" data-filter="*">All Students</button>
+
+    </p>
+    <!-- <p>
+      Responsibilities of Hogwarts:
+      <button class="filter" data-action="filter" data-filter="prefects">Prefects</button>
+      <button class="filter" data-action="filter" data-filter="inquisitorial-squad">
+        Inquisitorial Squad
+      </button>-->
+    <hr />
+    <table id="list">
+      <thead>
+        <tr id="sorting">
+          <th data-action="sort" data-sort-direction="asc" data-sort="firstName">First Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="middleName">Middle Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="nickName">Nickname</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="lastName">Last Name</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="status">Student status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- student template will be copied and inserted here -->
+      </tbody>
+    </table>
+    <div class="studentCard">
+    <template id="student">
+      <tr>
+        <td data-field="firstName">First Name</td>
+        <td data-field="middleName">Middle Name</td>
+        <td data-field="nickName">Nickname</td>
+        <td data-field="lastName">Last Name</td>
+        <td data-field="house">House</td>
+        <td data-field="status">❌</td>
+      </tr>
+    </template>
+    <!-- put popup here -->
+
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

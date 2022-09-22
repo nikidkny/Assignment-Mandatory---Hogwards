@@ -1,0 +1,59 @@
+Requirements:
+
+Data:
+ - read from https://petlatkea.dk/2021/hogwarts/students.json
+ - split into firstName, middleName, lastName optionally nickName
+
+List:
+ - display the list of students
+ - popup with details:
+    First name
+    Middle name (if any)
+    Nick name (if any)
+    Last name
+    Photo of student (if exists)
+    House Crest and colors
+    Blood-status
+    If the student is:
+    prefect or not
+    expelled or not
+    member of inquisitorial squad or not
+
+Sorting: 
+ - firstname, lastName at least
+ - by house, responsibilities
+
+Filtering:
+ - by house, responsibilities
+ - expelled non-expelled
+
+Searching:
+ - first or lastname
+ - A search field, that immediately limits the listed students to those matching the search criteria.
+
+About:
+ - Number of students in each house
+ - Total number of students (not expelled)
+ - Number of students expelled
+ - Number of students currently displayed
+
+Expelling students:
+ - can be from list or popup
+ - removes from the list of student to the expelled students
+ - expelled students can not be re-enrolled
+
+Prefects:
+ - only two students per house can be prefect
+ - any student can be given the status, but it can be taken away as well
+ - no gender limitation
+
+Blood-status:
+ - https://petlatkea.dk/2021/hogwarts/families.json
+ - calculate based on if the name is in which category
+ - 
+Inquisitorial squad:
+ - any number of students can be parts
+ - any student from pure-blood or slytherin house can be given the status, but it can be taken away as well
+
+Hacking:
+ - 
