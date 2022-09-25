@@ -136,12 +136,17 @@ function filterList(filteredList) {
     document.querySelector(
       ".gryffindor"
     ).textContent = `In House Gryffindor there is ${filteredList.length} students`;
+  } else if (settings.filterBy === "*") {
+    document.querySelector(
+      "#all"
+    ).textContent = `In Hogwarts School of Witchcraft and Wizardry there is ${allStudents.length} students`;
   } else if (settings.filterBy === "expelled") {
     filteredList = expelledStudents;
     document.querySelector(
       "#expelled"
     ).textContent = `There is ${filteredList.length} expelled students`;
   }
+
   return filteredList;
 }
 function isHufflepuff(student) {
@@ -156,6 +161,7 @@ function isRavenclaw(student) {
 function isGryffindor(student) {
   return student.house === "Gryffindor";
 }
+
 // sorting
 function selectSort(event) {
   const sortBy = event.target.dataset.sort;
@@ -225,6 +231,7 @@ function displayStudent(student) {
   clone.querySelector("[data-field=nickName]").textContent = student.nickName;
   clone.querySelector("[data-field=lastName]").textContent = student.lastName;
   clone.querySelector("[data-field=house]").textContent = student.house;
+  // clone.querySelector("#student").addEventListener("click", () => openStudentCard(student));
 
   // expelling students
   if (student.status === true) {
@@ -253,6 +260,16 @@ function displayStudent(student) {
 
   // add here the popup
 
+  // searching
   //append clone to list
   document.querySelector("#list tbody").appendChild(clone);
 }
+// function openStudentCard(student) {
+//   console.log("popup");
+//   const modal = document.querySelector("dialog");
+//   modal.querySelector(".modal-first-name").textContent = `First Name: ${student.firstName}`;
+//   modal.querySelector(".modal-middle-name").textContent = `Middle Name: ${student.middleName}`;
+//   modal.querySelector(".modal-nick-name").textContent = `Nickname: ${student.nickName}`;
+//   modal.querySelector(".modal-last-name").textContent = `Last Name: ${student.lastName}`;
+//   modal.querySelector(".modal-house").textContent = `House: ${student.house}`;
+// }
