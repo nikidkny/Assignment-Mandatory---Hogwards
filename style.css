@@ -48,6 +48,13 @@ h1 {
 #sorting th.sortby[data-sort-direction="desc"]::after {
   content: " ⮟";
 }
+.prefect {
+  height: 40px;
+}
+
+td[data-field="prefect"][data-prefect="false"] {
+  filter: contrast(0);
+}
 /* .hidden {
   display: none;
 }

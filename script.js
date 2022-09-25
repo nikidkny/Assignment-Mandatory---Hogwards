@@ -15,6 +15,7 @@ const Student = {
   imageSrc: "",
   house: "",
   studentStatus: true,
+  prefect: false,
 };
 const settings = { filterBy: "all", sortBy: "firstName", sortDir: "asc" };
 
@@ -257,7 +258,17 @@ function displayStudent(student) {
     //   student.status = true;
     // }
   }
-
+  //prefects
+  clone.querySelector("[data-field=prefect]").dataset.prefect = student.prefect;
+  clone.querySelector("[data-field=prefect]").addEventListener("click", choosePrefects);
+  function choosePrefects() {
+    if (student.prefect === true) {
+      student.prefect = false;
+    } else {
+      student.prefect = true;
+    }
+    buildList();
+  }
   // add here the popup
 
   // searching
