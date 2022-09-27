@@ -11,7 +11,6 @@ body {
 }
 tbody {
   background-color: rgba(39, 38, 38, 0.512);
-  text-align: left;
 }
 
 #list {
@@ -48,15 +47,42 @@ h1 {
 #sorting th.sortby[data-sort-direction="desc"]::after {
   content: " ⮟";
 }
-.prefect {
+.prefectImg {
   height: 40px;
+  text-align: center;
 }
-
 td[data-field="prefect"][data-prefect="false"] {
   filter: contrast(0);
+  text-align: center;
 }
-/* .hidden {
+.inquisitorialImg {
+  height: 40px;
+  text-align: center;
+}
+td[data-field="inquisitorialSquad"][data-inquisitorial-squad="false"] {
+  filter: contrast(0);
+  text-align: center;
+}
+.hidden {
   display: none;
+}
+#pop_up {
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  width: 50%;
+  z-index: 1;
+  margin-top: 15%;
+  margin-bottom: 10%;
+  margin-left: 20%;
+  padding-right: 3%;
+  padding-left: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: left;
+  background-color: black;
+  /* background-image: url(./media/gryffindor.svg); */
+  border-radius: 10px;
 }
 .popup {
   font-weight: bold;
@@ -82,13 +108,15 @@ td[data-field="prefect"][data-prefect="false"] {
   font-size: 30px;
   font-weight: bold;
   text-decoration: none;
-} */
+}
 #huff,
 #slyt,
 #gryf,
 #rave,
 #all,
-#expelled {
+#expelled,
+#prefect,
+#squad {
   width: 100%;
   height: 2em;
   background-color: rgba(32, 31, 31, 0.927);
@@ -120,7 +148,9 @@ td[data-field="prefect"][data-prefect="false"] {
   box-shadow: 0px 1px 10px #65a3fc;
 }
 #all:hover,
-#expelled:hover {
+#expelled:hover,
+#prefect:hover,
+#squad:hover {
   background-color: white;
   border: black;
   box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.773);

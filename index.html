@@ -8,14 +8,14 @@
     <title>Hogwarts</title>
   </head>
   <body>
-    <!-- <div class="hidden">
+     <!-- <div class="hidden">
       <div class="popup">
         <a class="close" href="#">✘</a>
         <h2>Are you sure you want to expell<span></span></h2>
         <button id="expellYes">Yes</button>
         <button>No</button>
       </div>
-    </div> -->
+    </div>  -->
     <h1>Hogwarts Student List</h1>
     <div class="housesGrid">
       <h2>Houses of Hogwarts:</h2>
@@ -42,13 +42,13 @@
       <button id="all" class="filter" data-action="filter" data-filter="*">All Students</button>
 
     </p>
-    <!-- <p>
+    <p>
       Responsibilities of Hogwarts:
-      <button class="filter" data-action="filter" data-filter="prefects">Prefects</button>
-      <button class="filter" data-action="filter" data-filter="inquisitorial-squad">
+      <button id="prefect" class="filter" data-action="filter" data-filter="prefect">Prefects</button>
+      <button id="squad" class="filter" data-action="filter" data-filter="inquisitorialquad">
         Inquisitorial Squad
-      </button>-->
-    <hr />
+      </button>
+    </p>
     <table id="list">
       <thead>
         <tr id="sorting">
@@ -57,7 +57,9 @@
           <th data-action="sort" data-sort-direction="asc" data-sort="nickName">Nickname</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="lastName">Last Name</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="house">House</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="bloodStatus">Blood status</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="prefect">Prefects</th>
+          <th data-action="sort" data-sort-direction="asc" data-sort="inquisitorialSquad">Inquisitorial Squad</th>
           <th data-action="sort" data-sort-direction="asc" data-sort="status">Student status</th>
         </tr>
       </thead>
@@ -73,20 +75,40 @@
         <td data-field="nickName">Nickname</td>
         <td data-field="lastName">Last Name</td>
         <td data-field="house">House</td>
-        <td data-field="prefect" data-prefect="false"><img class="prefect" src="media/prefect.svg" alt="prefect"></td>
+        <td data-field="bloodStatus">Blood status</td>
+        <td data-field="prefect" data-prefect="false"><img class="prefectImg" src="./media/prefect.svg" alt="prefect"></td>
+        <td data-field="inquisitorialSquad" ><img class="inquisitorialImg" src="./media/inquisitorial.svg" alt="inquisitorial"></td>
         <td class="statusMid" data-field="status">❌</td>
       </tr>
     </template>
     <!-- put popup here -->
-    <dialog>
-      <th class="modal-first-name"></th>
-      <th class="modal-middle-name"></th>
-      <th class="modal-nick-name"></th>
-      <th class="modal-last-name"></th>
-      <th class="modal-house"></th>
-      <th class="modal-prefect"></th>
-    </dialog>
     </div>
+    <dl id="pop_up" class="hidden">
+      <td>✖</td>
+      <img class="modal-student-img" src="./media/goldstein_a.png" alt="goldstein_a">
+      <dt>First Name:</dt>
+      <dd class="modal-first-name"></dd>
+
+      <dt>Middle Name:</dt>
+      <dd class="modal-middle-name"></dd>
+      
+      <dt>Nickname:</dt>
+      <dd class="modal-nick-name"></dd>
+      
+      <dt> Last Name:</dt>
+      <dd class="modal-last-name"></dd>
+
+      <dt>House:</dt>
+      <dd class="modal-house"></dd>
+      <img class="modal-house-img" src="./media/gryffindor.svg" alt="gryffindor">
+
+      <dt>Blood status</dt>
+      <dd class="modal-blood-status"></dd>
+      <dt>Prefect</dt>
+      <dd class="modal-prefect"><img class="prefectImg" src="media/prefect.svg" alt="prefect"></dd>
+      <dt>Inquisitorial Squad</dt>
+      <dd class="modal-inquisitorial-squad"></dd>
+    </dl>
     <script src="script.js"></script>
   </body>
 </html>
