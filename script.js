@@ -280,7 +280,7 @@ function searching() {
   const inputValue = document.querySelector("[data-search");
 
   inputValue.addEventListener("keyup", (e) => {
-    let searched = e.target.value;
+    let searched = capitalise(e.target.value);
     const searchFilter = allStudents.filter((student) => {
       return (
         student.firstName.includes(searched) || student.lastName.includes(searched)
