@@ -12,11 +12,11 @@ let pureBlood = [];
 let isHackingFlag;
 
 const Student = {
-  firstName: "",
+  firstName: "-unknown",
   middleName: "-unknown-",
   nickName: "-unknown-",
-  lastName: "",
-  house: "",
+  lastName: "-unknown-",
+  house: "-unknown-",
   bloodStatus: "muggle",
   prefect: false,
   inquisitorialSquad: false,
@@ -403,21 +403,23 @@ function displayStudent(student) {
     });
     // document.querySelector("#pop_up").removeEventListener("");
     //populate data on document
-    document.querySelector(".modal-student-img").src = `./media/${student.lastName.toLowerCase()}_${student.firstName
-      .charAt(0)
-      .toLowerCase()}.png`;
-    document.querySelector(".modal-student-img").alt = `${student.lastName.toLowerCase()}_${student.firstName
-      .charAt(0)
-      .toLowerCase()}`;
-    //fletchley_j.png
-    //fullname.substring(fullname.lastIndexOf("-") + 1).toLowerCase()}_${singleStudent.firstname[0].toLowerCase()}.png`;
-    if (student.lastName.includes(`-`)) {
+    if (student.lastName.toLowerCase().includes("patil")) {
+      document.querySelector(
+        ".modal-student-img"
+      ).src = `./media/${student.lastName.toLowerCase()}_${student.firstName.toLowerCase()}.png`;
+    } else if (student.lastName.includes(`-`)) {
+      const lastHyphen = student.lastName.substring(student.lastName.lastIndexOf(`-`) + 1);
+      const firstChar = student.firstName.charAt(0);
+      document.querySelector(
+        ".modal-student-img"
+      ).src = `./media/${lastHyphen.toLowerCase()}_${firstChar.toLowerCase()}.png`;
+    } else {
       document.querySelector(".modal-student-img").src = `./media/${student.lastName.toLowerCase()}_${student.firstName
         .charAt(0)
         .toLowerCase()}.png`;
-      //   document.querySelector(".modal-student-img").alt = `${student.lastName.toLowerCase()}_${student.firstName
-      //     .charAt(0)
-      //     .toLowerCase()}`;
+      document.querySelector(".modal-student-img").alt = `${student.lastName.toLowerCase()}_${student.firstName
+        .charAt(0)
+        .toLowerCase()}`;
     }
 
     document.querySelector(".modal-first-name").textContent = `${student.firstName}`;

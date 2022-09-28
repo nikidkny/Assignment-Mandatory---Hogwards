@@ -56,4 +56,6 @@ Inquisitorial squad:
  - any student from pure-blood or slytherin house can be given the status, but it can be taken away as well
 
 Hacking:
- - 
+ - Add myself to the list of students
+ - Mix blood status: pure bloods get random, others get pure-blood
+ - Inquisitorial squad members are disappearing after selecting them 
