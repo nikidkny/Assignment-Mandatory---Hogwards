@@ -427,7 +427,7 @@ function displayStudent(student) {
     document.querySelector(".modal-middle-name").textContent = `${student.middleName}`;
     document.querySelector(".modal-nick-name").textContent = `${student.nickName}`;
     document.querySelector(".modal-last-name").textContent = `${student.lastName}`;
-    document.querySelector(".modal-house").textContent = `${student.house}`;
+    // document.querySelector(".modal-house").textContent = `${student.house}`;
     //media\ravenclaw.svg
     document.querySelector(".modal-house-img").src = `./media/${student.house.toLowerCase()}.svg`;
     document.querySelector(".modal-house-img").alt = `${student.house.toLowerCase()}`;
