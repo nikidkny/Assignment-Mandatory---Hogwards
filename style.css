@@ -1,14 +1,14 @@
 @font-face {
   font-family: harryPotterFont;
-  src: url(harry-p-font/HarryP-MVZ6w.ttf);
+  src: url(./harry-p-font/HarryP-MVZ6w.ttf);
 }
 body {
   position: relative;
   color: white;
   display: grid;
   background-image: url("./media/background.jpg");
-  margin: 20px 50px;
 }
+
 tbody {
   background-color: rgba(39, 38, 38, 0.512);
 }
@@ -16,11 +16,23 @@ tbody {
 #list {
   background-color: black;
   text-align: center;
+  width: 100%;
 }
 h1 {
   font-family: harryPotterFont;
   font-size: 4em;
   text-align: center;
+}
+.search {
+  display: flex;
+  justify-content: center;
+}
+input[type="search"] {
+  text-align: left;
+  font-size: medium;
+  background-color: rgba(39, 38, 38, 0.512);
+  color: white;
+  width: 50%;
 }
 .housesGrid {
   display: grid;
@@ -51,6 +63,10 @@ h1 {
   height: 40px;
   text-align: center;
 }
+.suadImg {
+  height: 40px;
+  text-align: center;
+}
 td[data-field="prefect"][data-prefect="false"] {
   filter: contrast(0);
   text-align: center;
@@ -66,29 +82,144 @@ td[data-field="inquisitorialSquad"][data-inquisitorial-squad="false"] {
 .hidden {
   display: none;
 }
+main.close {
+  display: none;
+}
+#pop_up.open {
+  display: block;
+}
+#pop_up.close {
+  display: none;
+}
 #pop_up {
+  display: none;
   font-weight: bold;
   cursor: pointer;
-  position: absolute;
-  width: 50%;
+  width: 60%;
   z-index: 1;
-  margin-top: 15%;
-  margin-bottom: 10%;
   margin-left: 20%;
-  padding-right: 3%;
-  padding-left: 2%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  text-align: left;
-  background-color: black;
-  /* background-image: url(./media/gryffindor.svg); */
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.771);
   border-radius: 10px;
+}
+.modal {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 0.4fr 0.4fr 0.1fr;
+}
+.modal-close {
+  grid-row: 1;
+  grid-column: 3;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 4%;
+  font-size: 2em;
+  font-weight: 900;
+  margin: 0;
+}
+.modal-card {
+  grid-column: 1/-1;
+  grid-row: 1;
+  font-size: 2em;
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+.card {
+  font-size: 1.2em;
+  padding-left: 10%;
+  display: flex;
+  grid-column: 1/3;
+  grid-row: 2/5;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-right: 20%;
+}
+.media {
+  display: grid;
+  grid-row: 2;
+  grid-column: 3;
+  justify-items: center;
+}
+.modal-student-img {
+  height: 15em;
+}
+.extra {
+  display: flex;
+  align-items: center;
+}
+.modal-crest {
+  display: flex;
+  grid-column: 3;
+  grid-row: 4;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.modal-house-img {
+  height: 65%;
+}
+.modal-data {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-data > dt {
+  font-style: oblique;
+  text-decoration: underline;
+}
+/*-----------hacking-----------*/
+.hackedBackground {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-image: url("./media/hacked.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+.hackedBackground:before {
+  content: "";
+  position: absolute;
+  left: -50%;
+  height: 3px;
+  width: 40%;
+  background-color: greenyellow;
+  -webkit-animation: lineAnim 1s linear infinite;
+  -moz-animation: lineAnim 1s linear infinite;
+  animation: lineAnim 1s linear infinite;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.hacker {
+  display: none;
+  position: absolute;
+  left: 20%;
+  top: 5em;
+  width: 60%;
+  text-align: center;
+  background-color: rgba(169, 169, 169, 0.463);
+  color: white;
+  font-family: harryPotterFont;
+  font-size: 2em;
+}
+.hacker.open {
+  display: block;
+}
+#close_hacker {
+  text-align: right;
+  padding-right: 3%;
+  padding-bottom: 0%;
+  margin-bottom: 0;
+}
+.evil {
+  filter: invert(1);
 }
 .popup {
   font-weight: bold;
   cursor: pointer;
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   margin-top: 15%;
   margin-bottom: 10%;
   margin-left: 38%;
@@ -155,4 +286,29 @@ td[data-field="inquisitorialSquad"][data-inquisitorial-squad="false"] {
   border: black;
   box-shadow: 0px 1px 10px rgba(255, 255, 255, 0.773);
   color: black;
+}
+
+@keyframes animation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+.animation {
+  animation: animation 2s;
+}
+@keyframes lineAnim {
+  0% {
+    left: -40%;
+  }
+  50% {
+    left: 20%;
+    width: 80%;
+  }
+  100% {
+    left: 100%;
+    width: 100%;
+  }
 }

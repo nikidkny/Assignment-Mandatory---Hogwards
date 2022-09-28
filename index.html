@@ -8,6 +8,7 @@
     <title>Hogwarts</title>
   </head>
   <body>
+    <main>
      <!-- <div class="hidden">
       <div class="popup">
         <a class="close" href="#">✘</a>
@@ -17,6 +18,9 @@
       </div>
     </div>  -->
     <h1>Hogwarts Student List</h1>
+    <div class="search">
+      <input type="search" id="search" data-search="search" placeholder="Search">
+    </div>
     <div class="housesGrid">
       <h2>Houses of Hogwarts:</h2>
       <p class="housesO">
@@ -76,39 +80,73 @@
         <td data-field="lastName">Last Name</td>
         <td data-field="house">House</td>
         <td data-field="bloodStatus">Blood status</td>
-        <td data-field="prefect" data-prefect="false"><img class="prefectImg" src="./media/prefect.svg" alt="prefect"></td>
-        <td data-field="inquisitorialSquad" ><img class="inquisitorialImg" src="./media/inquisitorial.svg" alt="inquisitorial"></td>
-        <td class="statusMid" data-field="status">❌</td>
+        <td data-field="prefect" data-prefect="false" title="Appoint to Prefect"><img class="prefectImg" src="./media/prefect.svg" alt="prefect"></td>
+        <td data-field="inquisitorialSquad" title="Appoint to Inquisitorial Squad" ><img class="inquisitorialImg" src="./media/inquisitorial.svg" alt="inquisitorial"></td>
+        <td class="statusMid" data-field="status" title="Expell student">❌</td>
       </tr>
     </template>
-    <!-- put popup here -->
+  </main>
+    <!-- put popups here -->
     </div>
-    <dl id="pop_up" class="hidden">
-      <td>✖</td>
-      <img class="modal-student-img" src="./media/goldstein_a.png" alt="goldstein_a">
-      <dt>First Name:</dt>
-      <dd class="modal-first-name"></dd>
+    <dl id="pop_up" >
+        <div class="modal">
+          <p id="close-pop-up" class="modal-close">✖</p>
+          <h2 class="modal-card">Student Card</h2>
+          <div class="card">
+            <div class="modal-data">
+              <dt>First Name:</dt>
+              <dd class="modal-first-name"></dd>
+            </div>
 
-      <dt>Middle Name:</dt>
-      <dd class="modal-middle-name"></dd>
-      
-      <dt>Nickname:</dt>
-      <dd class="modal-nick-name"></dd>
-      
-      <dt> Last Name:</dt>
-      <dd class="modal-last-name"></dd>
+            <div class="modal-data">
+              <dt>Middle Name:</dt>
+              <dd class="modal-middle-name"></dd>
+            </div>
 
-      <dt>House:</dt>
-      <dd class="modal-house"></dd>
-      <img class="modal-house-img" src="./media/gryffindor.svg" alt="gryffindor">
+            <div class="modal-data">
+              <dt>Nickname:</dt>
+              <dd class="modal-nick-name"></dd>
+            </div>
 
-      <dt>Blood status</dt>
-      <dd class="modal-blood-status"></dd>
-      <dt>Prefect</dt>
-      <dd class="modal-prefect"><img class="prefectImg" src="media/prefect.svg" alt="prefect"></dd>
-      <dt>Inquisitorial Squad</dt>
-      <dd class="modal-inquisitorial-squad"></dd>
+            <div class="modal-data">
+              <dt> Last Name:</dt>
+              <dd class="modal-last-name"></dd>
+            </div>
+
+            <div class="modal-data">
+              <dt>Blood status</dt>
+              <dd class="modal-blood-status"></dd>
+            </div>
+
+            <div class="modal-data">
+              <dt>Student status</dt>
+              <dd class="modal-student-status"></dd>
+            </div>
+
+          </div>
+          <div class="media">
+            <img class="modal-student-img" src="./media/goldstein_a.png" alt="goldstein_a">
+            <div class="extra">
+              <!-- <dt>Prefect</dt> -->
+              <dd class="modal-prefect-img"><img class="prefectImg" src="./media/prefect.svg" alt=""></dd>
+              
+              <!-- <dt>Inquisitorial Squad</dt> -->
+              <dd class="modal-inquisitorial-squad"><img class="suadImg" src="./media/inquisitorial.svg" alt=""></dd>
+            </div>
+          </div>
+          <div class="modal-crest">
+            <dt class="modal-house"></dt>
+            <img class="modal-house-img" src="./media/gryffindor.svg" alt="gryffindor">
+          </div>
+      </div>
     </dl>
+    <dl id="hacking_popup">    
+      <dt></dt>
+    </dl>
+    <div class="hacker">
+      <p id="close_hacker">X</p>
+      <h2>Sorry, you can't get rid of me! <br><span class="evil">😈</span></h2>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
