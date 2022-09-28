@@ -326,12 +326,14 @@ function displayStudent(student) {
   //-------INQUISITORIAL SQUAD
   clone.querySelector("[data-field=inquisitorialSquad]").dataset.inquisitorialSquad = student.inquisitorialSquad;
   clone.querySelector("[data-field=inquisitorialSquad]").addEventListener("click", chooseSquad);
+
   function chooseSquad() {
-    if (student.house === "Slytherin" || student.bloodStatus === "Pure-blood") {
-      student.inquisitorialSquad = true;
-    } else if (student.inquisitorialSquad === true) {
+    if (student.inquisitorialSquad === true) {
       student.inquisitorialSquad = false;
+    } else if (student.house === "Slytherin" || student.bloodStatus === "Pure-blood") {
+      student.inquisitorialSquad = true;
     }
+    buildList();
     if (isHackingFlag === true) {
       setTimeout(() => {
         if (student.bloodStatus === "Pure-blood" || student.house === "Slytherin") {
@@ -344,7 +346,6 @@ function displayStudent(student) {
     //   console.log(false);
     //   clone.querySelector("[data-field=inquisitorialSquad]").textContent = ``;
     // }
-    buildList();
   }
 
   //-------EXPELLING STUDENTS
