@@ -504,7 +504,7 @@ function hackTheSystem() {
   isHackingFlag = false;
   document.addEventListener("keydown", startHacking);
   function startHacking(event) {
-    if (event.key === "1") {
+    if (event.key === "1" || event.key === "n") {
       isHackingFlag = !isHackingFlag;
 
       console.log(`work pls`);
@@ -517,6 +517,7 @@ function hackTheSystem() {
       //add me to students
       allStudents.push(nikiO);
       buildList(nikiO);
+      messyBlood();
     }
     function closePopUp() {
       document.removeEventListener("keydown", startHacking);
@@ -526,16 +527,18 @@ function hackTheSystem() {
       document.querySelector("#hacking_popup").removeEventListener("click", closePopUp);
     }
   }
-  // allStudents.forEach((student) => {
-  //   const randomBlood = Math.floor(Math.random() * 3);
-  //   const bloodTypes = ["muggle-born", "half-blood", "pure-blood"];
-  //   if (student.bloodStatus === "pure-blood") {
-  //     student.bloodStatus = bloodTypes[randomBlood];
-  //   } else {
-  //     student.bloodStatus = "pure-blood";
-  //   }
-  // });
-  // buildList();
+  function messyBlood() {
+    allStudents.forEach((student) => {
+      const randomBlood = Math.floor(Math.random() * 3);
+      const bloodTypes = ["Muggle-born", "Half-blood", "Pure-blood"];
+      if (student.bloodStatus === "Pure-blood") {
+        student.bloodStatus = bloodTypes[randomBlood];
+      } else {
+        student.bloodStatus = "Pure-blood";
+      }
+    });
+    buildList();
+  }
   // adding my name to array
 
   // if (allStudents[allStudents.length -1].firstName !="Nikolett"){
