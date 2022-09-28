@@ -434,14 +434,23 @@ function displayStudent(student) {
     document.querySelector(".modal-blood-status").textContent = `${student.bloodStatus}`;
 
     if (student.prefect === true && student.inquisitorialSquad === true) {
-      document.querySelector(".modal-prefect-img").src = `./media/prefect.svg`;
-      document.querySelector(".modal-inquisitorial-squad").src = `./media/inquisitorial.svg`;
+      document.querySelector(
+        ".modal-prefect-img"
+      ).textContent = `${student.firstName} is a prefect and the member of the Inquisitorial Squad`;
+      //document.querySelector(".modal-prefect-img").src = `./media/prefect.svg`;
+      //document.querySelector(".modal-inquisitorial-squad").src = `./media/inquisitorial.svg`;
     } else if (student.prefect === true) {
-      document.querySelector(".modal-prefect-img").src = `./media/prefect.svg`;
-      document.querySelector(".modal-inquisitorial-squad").textContent = ` `;
+      document.querySelector(".modal-prefect-img").textContent = `${student.firstName} is a prefect`;
+
+      // document.querySelector(".modal-prefect-img").src = `./media/prefect.svg`;
+      // document.querySelector(".modal-inquisitorial-squad").textContent = ` `;
     } else if (student.inquisitorialSquad === true) {
-      document.querySelector(".modal-inquisitorial-squad").src = `./media/inquisitorial.svg`;
-      document.querySelector(".modal-prefect-img").textContent = ` `;
+      document.querySelector(
+        ".modal-prefect-img"
+      ).textContent = `${student.firstName} is the member of the Inquisitorial Squad`;
+
+      // document.querySelector(".modal-inquisitorial-squad").src = `./media/inquisitorial.svg`;
+      // document.querySelector(".modal-prefect-img").textContent = ` `;
     } else {
       document.querySelector(".modal-inquisitorial-squad").textContent = ` `;
       document.querySelector(".modal-prefect-img").textContent = ` `;
@@ -483,8 +492,8 @@ function findPrefects(selectedStudents) {
     removePrefect(prefectB);
     appointPrefect(selectedStudents);
   }
-  function removePrefect(prefectStudents) {
-    prefectStudents.prefect = false;
+  function removePrefect(student) {
+    student.prefect = false;
   }
   function appointPrefect(student) {
     student.prefect = true;
